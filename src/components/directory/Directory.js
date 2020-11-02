@@ -12,17 +12,20 @@ class Directory extends React.Component {
     title: 'Watches',
     imageUrl: "https://ae01.alicdn.com/kf/H77cdd4f1b4d44afcb3b07b975066f3bdy/2020-Minimalist-Men-s-Fashion-Ultra-Thin-Watches-Simple-Men-Business-Stainless-Steel-Mesh-Belt-Quartz.jpg",
     id: 1,
+    linkUrl: 'watches'
    },
    {
     title: "Phones",
     imageUrl: " https://photos5.appleinsider.com/gallery/37523-70507-218-hero-xl.jpg",
     id: 2,
+    linkUrl: ''
    },
 
    {
     title: 'Camera',
     imageUrl: "https://cdn1.bigcommerce.com/n-ou1isn/8w72fk/products/3044/images/6798/1535007761000_IMG_1052118__19987.1535069944.1280.1280.jpg?c=2 ",
     id: 3,
+    linkUrl: ''
    },
   ]
  }
@@ -34,8 +37,8 @@ class Directory extends React.Component {
   return (
    <>
     <div className='directory-menu'>
-     {this.state.sections.map(({ title, imageUrl, id }) => (
-      <MenuItem key={id} title={title} imageUrl={imageUrl} />
+     {this.state.sections.map(({ id, ...otherSectionProps }) => (
+      <MenuItem key={id} {...otherSectionProps} />
      ))}
     </div>
    </>
