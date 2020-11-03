@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage.js';
 import Shoppage from './pages/shop/Shoppage';
 import NavBar from './components/navBar/NavBar.js';
+import Checkout from './pages/checkout/Checkout.js'
+
 // const Watchpage = () => {
 //   return (
 //     <div>
@@ -20,6 +22,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={Homepage} />
         <Route path='/shop' component={Shoppage} />
+        <Route exact path='/checkout' component={Checkout} />
+
       </Switch>
     </div>
   );
