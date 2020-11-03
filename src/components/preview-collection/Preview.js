@@ -11,7 +11,7 @@ const Preview = ({ title, details }) => {
    <h1 className='title'>{title.toUpperCase()}</h1>
    <div className='preview'>
     {
-     details.filter((detail, idx) => idx < 4).map(({ id, ...otherDetailProps }) => (<CollectionItem key={id} {...otherDetailProps} />))
+     details.filter((detail, idx) => idx < 4).map((detail) => (<CollectionItem key={detail.id} detail={detail} />))
     }
    </div>
 
