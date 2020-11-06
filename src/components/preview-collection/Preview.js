@@ -14,6 +14,7 @@ const Preview = ({ title, details }) => {
      details.filter((detail, idx) => idx < 4).map((detail) => (<CollectionItem key={detail.id} detail={detail} />))
     }
    </div>
+   {/* filter(el => el.title.toLowerCase().includes(this.state.searchRec.toLowerCase())) */}
 
   </div>
  )

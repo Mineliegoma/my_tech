@@ -1,34 +1,44 @@
 import React from 'react'
+import { connect } from 'react-redux'
+// import { createStructuredSelector } from 'reselect';
+// import { selectCollections } from '../../redux/shop/shop.selectors'
 import Preview from '../../components/preview-collection/Preview.js'
+// import { getItems } from '../../redux/shop/shop.actions'
+// import Search from '../../components/search/Search.js'
+
+
+
 class Shoppage extends React.Component {
- state = {
-  collections: []
- }
- componentDidMount() {
-  fetch('http://localhost:3000/api/v1/items')
-   .then(res => res.json())
-   .then(resp => this.setState({ collections: resp }))
-   .catch(console.log)
- }
 
+  //  renderItems = () => {
+  //     return this.props.items.map(({ id, ...otherCollectionProps }) => (<Preview key={id} {...otherCollectionProps} />))
+  //   } 
 
+  render() {
 
- render() {
-  const { collections } = this.state;
-  return (
-   <>
-    <div className="shop-page">
-     {
-      collections.map(({ id, ...otherCollectionProps }) => (<Preview key={id} {...otherCollectionProps} />))
+    console.log('hehe', this.props)
+    return (
+      <>
+        {/* <Search search={this.state.search} searchHandler={this.searchChange} /> */}
+        <div className="shop-page">
+          {
+            this.props.items.map(({ id, ...otherCollectionProps }) => (<Preview key={id} {...otherCollectionProps} />))
 
-     }
-    </div>
+          }
 
+          {/* {this.renderItems()} */}
+        </div>
+      </>
 
-   </>
-
-  )
- }
+    )
+  }
+};
+function mapStateToProps(state) {
+  console.log('hehe', state.api)
+  return {
+    items: state.api
+  }
 
 }
-export default Shoppage
+
+export default connect(mapStateToProps)(Shoppage);
