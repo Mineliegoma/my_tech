@@ -10,7 +10,7 @@ function Homepage() {
    <div className='homepage'>
     <Directory />
     <div className='homepage-h5'>
-     <h5>Go to  "SHOP"  to see our collections</h5>
+     <h5>Go to  "SHOP"  to see our top collections</h5>
     </div>
    </div>
 

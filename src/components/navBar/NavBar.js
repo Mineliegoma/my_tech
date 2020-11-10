@@ -8,31 +8,32 @@ import './navbar.styles.scss'
 import CartIcon from '../cart-icon/CartIcon.js';
 import Cart from '../cart/Cart.js';
 const NavBar = ({ hidden }) => {
- return (
-  <>
+  return (
+    <>
 
-   <div className='header'>
+      <div className='header'>
 
-    <Link className='logo-container' to='/' >HOME</Link>
+        <Link className='logo-container' to='/' >HOME</Link>
 
-    <div className='options'>
+        <div className='options'>
 
-     <Link className='option' to='/shop'>SHOP</Link>
-     <Link className='option' to='/contact'>CONTACT</Link>
+          <Link className='option' to='/shop'>SHOP</Link>
+          <Link className='option' to='/contact'>CONTACT</Link>
+          <Link className='option' to='/account'>ACCOUNT</Link>
 
-     <CartIcon />
-    </div>
-    {
-     hidden ? null :
-      <Cart />
-    }
+          <CartIcon />
+        </div>
+        {
+          hidden ? null :
+            <Cart />
+        }
 
-   </div>
-  </>
- );
+      </div>
+    </>
+  );
 }
 const mapStateToProps = ({ cart: { hidden } }) => ({
- hidden,
+  hidden,
 });
 
 
