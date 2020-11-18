@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  
 
   .logo-container {
     height: 100%;
@@ -23,3 +24,12 @@
     }
   }
 }
+.p-tag{
+    // height: 100%;
+    // width: 70px;
+    //  padding: 56px;
+    // color: orange;
+    display: center;
+    text-align: center;
+    text-decoration: underline;
+  }
